@@ -3,10 +3,19 @@ import React, { useState } from 'react';
 // ternary operator
 
 const ShortCircuit = () => {
-  // const firstValue = text || 'hello world';
-  // const secondValue = text && 'hello world';
+  //As the state value is an empty string, it is falsy.
+  const [text, setText] = useState('');
 
-  return <h2>short circuit</h2>;
+  //value of text or if falsy, hello world.
+  const firstValue = text || 'hello world';
+  //If it is not true, return the value. Otherwise return hello world.
+  const secondValue = text && 'hello world';
+  
+
+  return <>
+  <h1>{firstValue}</h1>
+  <h1>value: {secondValue}</h1>
+  </>
 };
 
 export default ShortCircuit;
